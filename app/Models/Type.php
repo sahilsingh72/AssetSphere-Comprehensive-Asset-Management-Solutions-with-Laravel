@@ -9,8 +9,7 @@ class Type extends Model
 {
     use HasFactory;
 
-    public function assets()
-    {
-        return $this->hasMany(Asset::class);
-    }
+    protected $fillable = [
+        'name',
+    ];
 }

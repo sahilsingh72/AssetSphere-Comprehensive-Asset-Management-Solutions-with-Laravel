@@ -19,6 +19,7 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('okcl/asset') ? 'active' : '' }}" href="{{ route('okcl.asset') }}">Asset List</a>
                     </li> 
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Add Asset Type</a></li> -->
                 </ul>
             </div>
         </li>
@@ -31,7 +32,7 @@
             </a>
             <div class="collapse {{ request()->is('okcl/components*') ? 'show' : '' }}" id="components-menu">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="#">Component List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('okcl.component')}}">Component List</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Add Component</a></li>
                 </ul>
             </div>
@@ -64,20 +65,7 @@
                 </ul>
             </div>
         </li>
-        <!-- Asset Types -->
-        <li class="nav-item">
-            <a class="nav-link {{ request()->is('okcl/assettypes*') ? 'active' : '' }}" data-toggle="collapse" href="#assettypes-menu" aria-expanded="{{ request()->is('okcl/assettypes*') ? 'true' : 'false' }}" aria-controls="assettypes-menu">
-                <i class="fas fa-layer-group menu-icon"></i>
-                <span class="menu-title">Asset Types</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse {{ request()->is('okcl/assettypes*') ? 'show' : '' }}" id="assettypes-menu">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="#">Asset Types List</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Add Asset Type</a></li>
-                </ul>
-            </div>
-        </li>
+        
         <!-- Brands -->
         <li class="nav-item">
             <a class="nav-link {{ request()->is('okcl/brands*') ? 'active' : '' }}" data-toggle="collapse" href="#brands-menu" aria-expanded="{{ request()->is('okcl/brands*') ? 'true' : 'false' }}" aria-controls="brands-menu">

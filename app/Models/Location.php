@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,9 +9,8 @@ class Location extends Model
 {
     use HasFactory;
 
-    public function assets()
-    {
-        return $this->hasMany(Asset::class);
-    }
+    protected $fillable = [
+        'location_name',
+        'address',
+    ];
 }
-

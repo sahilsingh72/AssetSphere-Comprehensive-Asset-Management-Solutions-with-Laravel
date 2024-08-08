@@ -184,12 +184,12 @@
         data: {
           labels: ["Jan", "Feb", "Mar", "Apr", "May"],
           datasets: [{
-              label: 'Offline Sales',
+              label: 'Offline Transaction',
               data: [480, 230, 470, 210, 330],
               backgroundColor: '#98BDFF'
             },
             {
-              label: 'Online Sales',
+              label: 'Online Transaction',
               data: [400, 340, 550, 480, 170],
               backgroundColor: '#4B49AC'
             }
@@ -220,7 +220,7 @@
                 min: 0,
                 max: 560,
                 callback: function(value, index, values) {
-                  return  value + '$' ;
+                  return  value + '₹' ;
                 },
                 autoSkip: true,
                 maxTicksLimit: 10,

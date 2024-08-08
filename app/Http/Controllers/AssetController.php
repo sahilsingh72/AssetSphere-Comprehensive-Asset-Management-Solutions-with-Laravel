@@ -1,17 +1,23 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Asset;
+use App\Models\Task;
+use App\Models\Todolist;
 use Illuminate\Http\Request;
 
 class AssetController extends Controller
 {
     public function index()
     {
+        // Fetch all tasks
+        // $tasks = Todolist::all();
+        
+        // Paginate assets, showing 10 per page
         $assets = Asset::paginate(10);
-        // $totalAssets = Asset::count();
-        return view('admin.asset', compact('assets'));
+        
+        // Return the view with both assets and tasks
+        return view('admin.asset.index', compact('assets'));
     }
 
     public function store(Request $request)
@@ -25,6 +31,6 @@ class AssetController extends Controller
 
         Asset::create($request->all());
 
-        return redirect()->route('okcl.asset')->with('success', 'Asset added successfully.');
+        return redirect()->route('okcl.asset.index')->with('success', 'Asset added successfully.');
     }
 }
